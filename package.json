@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "workspaces": [
+    "packages"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidpn11/dp-labs.git"
