@@ -5,7 +5,7 @@
       "@dp-labs/*": ["packages/*/src"]
     },
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "esnext",
     "jsx": "react",
     "target": "es5",
     "skipLibCheck": true,
