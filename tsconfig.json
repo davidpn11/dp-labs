@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@dp-labs/*": ["packages/*/src"]
+    },
+    "sourceMap": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "target": "es5",
+    "skipLibCheck": true,
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "types":[],
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}
