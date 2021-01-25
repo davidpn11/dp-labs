@@ -1,6 +1,7 @@
 {
   "name": "@dp-labs/ui-components",
   "version": "0.1.1",
+  "license": "MIT",
   "peerDependencies": {
     "react": "^16.3.0",
     "styled-components": "^5.2.1"
