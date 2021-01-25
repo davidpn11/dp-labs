@@ -25,7 +25,7 @@ export const ModalWrapper = styled.main`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: ${(props) => props.theme.elevation.e5};
+  box-shadow: ${(props) => props.theme.zIndex.z5};
   display: flex;
   flex-direction: column;
   padding: 8px 16px;

@@ -21,24 +21,23 @@ export const theme = {
     blue: "#2F80ED",
   },
   spacing: {
-    none: "0px",
     XS: "4px",
     S: "8px",
-    default: "12px",
+    M: "12px",
     L: "16px",
     XL: "24px",
     XXL: "32px",
   },
-  elevation: {
-    e1:
+  zIndex: {
+    z1:
       "0 1px 1px 0 rgba(0, 0, 0, 0.07), 0 2px 1px -1px rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.1)",
-    e2:
+    z2:
       "0 2px 2px 0 rgba(0, 0, 0, 0.07), 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.1)",
-    e3:
+    z3:
       "0 3px 4px 0 rgba(0, 0, 0, 0.07), 0 3px 3px -2px rgba(0, 0, 0, 0.06), 0 1px 8px 0 rgba(0, 0, 0, 0.1)",
-    e4:
+    z4:
       "0 4px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 10px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1)",
-    e5:
+    z5:
       "0 6px 10px 0 rgba(0, 0, 0, 0.07), 0 1px 18px 0 rgba(0, 0, 0, 0.06), 0 3px 5px -1px rgba(0, 0, 0, 0.1)",
   },
 };
