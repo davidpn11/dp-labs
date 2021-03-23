@@ -1,6 +1,6 @@
 {
   "name": "@dp-labs/ui-components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.3.0",
@@ -43,7 +43,7 @@
     "build-watch": "rollup -c -w",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6009 -s public",
     "build-storybook": "build-storybook -s public",
     "prepublishOnly": "yarn run build"
   },

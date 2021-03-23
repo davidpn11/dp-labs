@@ -14,6 +14,7 @@
     "url": "https://github.com/davidpn11/dp-labs/issues"
   },
   "scripts": {
+    "clean:modules": "rimraf ./**/node_modules && yarn install",
     "build": "lerna run build",
     "storybook:run": "lerna run --scope @dp-labs/ui-components storybook --stream",
     "storybook:build": "lerna run --scope @dp-labs/ui-components build-storybook --stream",
@@ -21,12 +22,14 @@
   },
   "keywords": [
     "lerna",
-    "utils"
+    "utils",
+    "dplabs"
   ],
   "author": "David Nascimento",
   "license": "ISC",
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "lerna": "^3.22.1",
-    "typescript": "^4.1.2"
+    "typescript": "4.1.2"
   }
 }
