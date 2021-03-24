@@ -16,6 +16,7 @@
   "scripts": {
     "clean:modules": "rimraf ./**/node_modules && yarn install",
     "build": "lerna run build",
+    "web:dev": "lerna run --scope @dp-labs/web dev --stream",
     "storybook:run": "lerna run --scope @dp-labs/ui-components storybook --stream",
     "storybook:build": "lerna run --scope @dp-labs/ui-components build-storybook --stream",
     "test": "echo \"Error: no test specified\" && exit 1"
