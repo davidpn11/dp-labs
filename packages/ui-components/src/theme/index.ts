@@ -1,14 +1,18 @@
 export const theme = {
   colors: {
-    primary100: "#F36D00",
-    primary200: "#DA6200",
-    primary300: "#C05600",
-    primary400: "#C05600",
-    neutral100: "#FFFFFF",
-    neutral200: "#F4F5F7",
-    neutral300: "#E1E1E1",
-    neutral400: "#737581",
-    neutral500: "#4A4B53",
+    primary: {
+      100: "#F36D00",
+      200: "#DA6200",
+      300: "#C05600",
+      400: "#C05600",
+    },
+    neutral: {
+      100: "#FFFFFF",
+      200: "#F4F5F7",
+      300: "##E1E1E1",
+      400: "#737581",
+      500: "#4A4B53",
+    },
     success100: "#529E66",
     success200: "#367B48",
     success300: "#276738",

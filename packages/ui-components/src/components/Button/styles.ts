@@ -31,30 +31,30 @@ const BaseButton = css`
 
 export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   ${BaseButton}
-  color: ${(props) => props.theme.colors.neutral500};
+  color: ${(props) => props.theme.colors.neutral[500]};
   background: transparent;
   transition: all 0.3s ease;
   &:hover {
-    background: ${(props) => props.theme.colors.neutral200};
+    background: ${(props) => props.theme.colors.neutral[200]};
   }
   &:active {
-    background: ${(props) => props.theme.colors.neutral300};
+    background: ${(props) => props.theme.colors.neutral[300]};
   }
 
   &:disabled {
-    color: ${(props) => props.theme.colors.neutral100};
-    background: ${(props) => props.theme.colors.neutral300};
+    color: ${(props) => props.theme.colors.neutral[100]};
+    background: ${(props) => props.theme.colors.neutral[300]};
   }
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   ${BaseButton}
-  color: ${(props) => props.theme.colors.neutral100};
+  color: ${(props) => props.theme.colors.neutral[100]};
   ${(props) => {
     switch (props.variant) {
       case "primary":
         return css`
-          background-color: ${(props) => props.theme.colors.primary100};
+          background-color: ${(props) => props.theme.colors.primary[100]};
         `;
       case "warning":
         return css`
@@ -78,7 +78,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       switch (props.variant) {
         case "primary":
           return css`
-            background-color: ${(props) => props.theme.colors.primary300};
+            background-color: ${(props) => props.theme.colors.primary[300]};
           `;
         case "warning":
           return css`
@@ -103,7 +103,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       switch (props.variant) {
         case "primary":
           return css`
-            background-color: ${(props) => props.theme.colors.primary200};
+            background-color: ${(props) => props.theme.colors.primary[200]};
           `;
         case "warning":
           return css`

@@ -1,7 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const PageContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background: blue;
+
+  ${(props) => css`
+    background: linear-gradient(
+      0deg,
+      ${props.theme.colors.primary[100]},
+      ${props.theme.colors.primary[300]}
+    );
+  `}
 `;

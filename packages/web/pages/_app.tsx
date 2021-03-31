@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "@dp-labs/ui-components/dist";
+import { theme } from "../styles/theme";
 const GlobalStyle = createGlobalStyle`
   html,
   body, #__next{
@@ -29,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider customTheme={theme}>
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>
