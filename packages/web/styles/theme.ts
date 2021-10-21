@@ -1,4 +1,4 @@
-import { Theme, theme as UItheme } from "@dp-labs/ui-components/dist";
+import { Theme, theme as UItheme } from "@dplabs/labs-ui";
 
 export const theme: Partial<Theme> = {
   ...UItheme,

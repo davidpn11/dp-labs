@@ -1,5 +1,5 @@
 import "styled-components";
-import { Theme } from "@dp-labs/ui-components/dist";
+import { Theme } from "@dplabs/labs-ui";
 import { WebTheme } from "./styles/theme";
 
 type CombinedTheme = Theme & WebTheme;

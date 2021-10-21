@@ -1,5 +1,5 @@
 {
-  "name": "dp-labs",
+  "name": "dplabs",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -16,9 +16,7 @@
   "scripts": {
     "clean:modules": "rimraf ./**/node_modules && yarn install",
     "build": "lerna run build",
-    "web:dev": "lerna run --scope @dp-labs/web dev --stream",
-    "storybook:run": "lerna run --scope @dp-labs/ui-components storybook --stream",
-    "storybook:build": "lerna run --scope @dp-labs/ui-components build-storybook --stream",
+    "web:dev": "lerna run --scope @dplabs/web dev --stream",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -29,8 +27,8 @@
   "author": "David Nascimento",
   "license": "ISC",
   "devDependencies": {
-    "rimraf": "^3.0.2",
     "lerna": "^3.22.1",
-    "typescript": "4.1.2"
+    "rimraf": "^3.0.2",
+    "typescript": "4.4.4"
   }
 }

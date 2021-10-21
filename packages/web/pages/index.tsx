@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { PageContainer } from "../styles/global";
-import { Button, GhostButton } from "@dp-labs/ui-components/dist";
+import { Button, GhostButton } from "@dplabs/labs-ui";
 import { PageHeader } from "../components/header";
 
 export default function Home() {

@@ -9,5 +9,6 @@ type Props = {
 
 export function ThemeProvider({children, customTheme}: Props) {
   const newTheme = {...theme, ...customTheme};
+  console.log('new', newTheme);
   return <StyledThemeProvider theme={newTheme}>{children}</StyledThemeProvider>;
 }
