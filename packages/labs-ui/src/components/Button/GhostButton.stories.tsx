@@ -19,6 +19,6 @@ export const PrimaryButton = () => (
 );
 
 export default {
-  title: 'Component/Ghost Button',
+  title: 'Components/Ghost Button',
   component: PrimaryButton,
 };

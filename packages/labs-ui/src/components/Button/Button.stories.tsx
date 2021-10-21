@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Button } from ".";
+import React from 'react';
+import styled from 'styled-components';
+import {Button} from '.';
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,6 +27,6 @@ export const PrimaryButton = () => (
 );
 
 export default {
-  title: "Component/Button",
+  title: 'Components/Button',
   component: PrimaryButton,
 };
