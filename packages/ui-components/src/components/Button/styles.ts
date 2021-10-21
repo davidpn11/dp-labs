@@ -1,7 +1,6 @@
-import styled, { css } from "styled-components";
-import { GhostButton } from ".";
+import styled, {css} from 'styled-components';
 
-export type ButtonVariants = "primary" | "warning" | "error" | "success";
+export type ButtonVariants = 'primary' | 'warning' | 'error' | 'success';
 
 type ButtonProps = {
   variant: ButtonVariants;
@@ -13,7 +12,7 @@ type GhostButtonProps = {
 };
 
 const BaseButton = css`
-  font-family: "Arial";
+  font-family: 'Arial';
   font-weight: 600;
   cursor: pointer;
   overflow: hidden;
@@ -31,42 +30,42 @@ const BaseButton = css`
 
 export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   ${BaseButton}
-  color: ${(props) => props.theme.colors.neutral[500]};
+  color: ${props => props.theme.colors.neutral[500]};
   background: transparent;
   transition: all 0.3s ease;
   &:hover {
-    background: ${(props) => props.theme.colors.neutral[200]};
+    background: ${props => props.theme.colors.neutral[200]};
   }
   &:active {
-    background: ${(props) => props.theme.colors.neutral[300]};
+    background: ${props => props.theme.colors.neutral[300]};
   }
 
   &:disabled {
-    color: ${(props) => props.theme.colors.neutral[100]};
-    background: ${(props) => props.theme.colors.neutral[300]};
+    color: ${props => props.theme.colors.neutral[100]};
+    background: ${props => props.theme.colors.neutral[300]};
   }
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   ${BaseButton}
-  color: ${(props) => props.theme.colors.neutral[100]};
-  ${(props) => {
+  color: ${props => props.theme.colors.neutral[100]};
+  ${props => {
     switch (props.variant) {
-      case "primary":
+      case 'primary':
         return css`
-          background-color: ${(props) => props.theme.colors.primary[100]};
+          background-color: ${props => props.theme.colors.primary[100]};
         `;
-      case "warning":
+      case 'warning':
         return css`
-          background-color: ${(props) => props.theme.colors.warning100};
+          background-color: ${props => props.theme.colors.warning100};
         `;
-      case "error":
+      case 'error':
         return css`
-          background-color: ${(props) => props.theme.colors.error100};
+          background-color: ${props => props.theme.colors.error100};
         `;
-      case "success":
+      case 'success':
         return css`
-          background-color: ${(props) => props.theme.colors.success100};
+          background-color: ${props => props.theme.colors.success100};
         `;
       default:
         break;
@@ -74,23 +73,23 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }}
 
   &:active {
-    ${(props) => {
+    ${props => {
       switch (props.variant) {
-        case "primary":
+        case 'primary':
           return css`
-            background-color: ${(props) => props.theme.colors.primary[300]};
+            background-color: ${props => props.theme.colors.primary[300]};
           `;
-        case "warning":
+        case 'warning':
           return css`
-            background-color: ${(props) => props.theme.colors.warning300};
+            background-color: ${props => props.theme.colors.warning300};
           `;
-        case "error":
+        case 'error':
           return css`
-            background-color: ${(props) => props.theme.colors.error300};
+            background-color: ${props => props.theme.colors.error300};
           `;
-        case "success":
+        case 'success':
           return css`
-            background-color: ${(props) => props.theme.colors.success300};
+            background-color: ${props => props.theme.colors.success300};
           `;
         default:
           break;
@@ -99,23 +98,23 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.variant) {
-        case "primary":
+        case 'primary':
           return css`
-            background-color: ${(props) => props.theme.colors.primary[200]};
+            background-color: ${props => props.theme.colors.primary[200]};
           `;
-        case "warning":
+        case 'warning':
           return css`
-            background-color: ${(props) => props.theme.colors.warning200};
+            background-color: ${props => props.theme.colors.warning200};
           `;
-        case "error":
+        case 'error':
           return css`
-            background-color: ${(props) => props.theme.colors.error200};
+            background-color: ${props => props.theme.colors.error200};
           `;
-        case "success":
+        case 'success':
           return css`
-            background-color: ${(props) => props.theme.colors.success200};
+            background-color: ${props => props.theme.colors.success200};
           `;
         default:
           break;
@@ -124,6 +123,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   &:focus {
-    border: 2px solid ${(props) => props.theme.colors.blue};
+    border: 2px solid ${props => props.theme.colors.blue};
   }
 `;
