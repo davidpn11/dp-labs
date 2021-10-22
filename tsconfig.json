@@ -2,21 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@dp-labs/*": ["packages/*/src"]
+      "@dp-labs/*": ["packages/*"]
     },
     "sourceMap": true,
     "module": "esnext",
     "jsx": "react",
     "target": "es5",
-    "skipLibCheck": true,
     "strict": true,
     "declaration": true,
     "esModuleInterop": true,
-    "types":[],
+    "types": []
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build"
-  ]
+  "exclude": ["node_modules", "dist", "build"]
 }
