@@ -17,7 +17,9 @@
     "clean:modules": "rimraf ./**/node_modules && yarn install",
     "build": "lerna run build",
     "web:dev": "lerna run --scope @dplabs/web dev --stream",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "web-react:dev": "lerna run --scope @dplabs/web-react start --stream",
+    "web-react:build": "lerna run --scope @dplabs/web-react build --stream"
   },
   "keywords": [
     "lerna",
