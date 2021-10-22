@@ -19,7 +19,9 @@
     "web:dev": "lerna run --scope @dplabs/web dev --stream",
     "test": "echo \"Error: no test specified\" && exit 1",
     "web-react:dev": "lerna run --scope @dplabs/web-react start --stream",
-    "web-react:build": "lerna run --scope @dplabs/web-react build --stream"
+    "lib:build": "lerna run --scope @dplabs/labs-ui build --stream",
+    "web-react:build": "lerna run --scope @dplabs/web-react build --stream",
+    "app:build": "yarn lib:build && yarn web-react:build"
   },
   "keywords": [
     "lerna",
