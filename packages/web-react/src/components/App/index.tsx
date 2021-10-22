@@ -1,5 +1,9 @@
-import {createGlobalStyle, ThemeProvider} from 'styled-components';
-import {theme} from '../styles/theme';
+import React from 'react';
+import {ThemeProvider} from '@dplabs/labs-ui';
+import {createGlobalStyle} from 'styled-components';
+import {theme} from '../../styles/theme';
+import {PageContainer} from '../../styles/global';
+import {PageHeader} from '../header';
 const GlobalStyle = createGlobalStyle`
   html,
   body, #__next{
@@ -27,13 +31,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function MyApp({Component, pageProps}) {
+export function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider customTheme={theme}>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <PageContainer>
+        <PageHeader />
+      </PageContainer>
     </ThemeProvider>
   );
 }
-
-export default MyApp;

@@ -34,7 +34,10 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   background: transparent;
   transition: all 0.3s ease;
   &:hover {
-    background: ${props => props.theme.colors.neutral[200]};
+    background: ${props => {
+      console.log('bun', props);
+      return props.theme.colors.neutral[200];
+    }};
   }
   &:active {
     background: ${props => props.theme.colors.neutral[300]};
