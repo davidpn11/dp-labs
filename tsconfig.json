@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@dp-labs/*": ["packages/*"]
+      "@dplabs/*": ["packages/*"]
     },
     "sourceMap": true,
     "module": "esnext",
@@ -13,5 +13,6 @@
     "esModuleInterop": true,
     "types": []
   },
+  "include": ["src", "@types"],
   "exclude": ["node_modules", "dist", "build"]
 }

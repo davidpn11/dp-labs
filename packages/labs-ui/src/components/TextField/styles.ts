@@ -9,6 +9,7 @@ export const FieldWrapper = styled.div`
 export const FieldLabel = styled.strong`
   font-size: 16px;
   letter-spacing: 0.5px;
+  color: ${props => props.theme.colors.neutral[500]};
 `;
 
 export const FieldInput = styled.input`
