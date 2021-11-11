@@ -1,10 +1,10 @@
-import React from "react";
-import { ButtonVariants, GhostButtonWrapper, ButtonWrapper } from "./styles";
+import React from 'react';
+import {ButtonVariants, GhostButtonWrapper, ButtonWrapper} from './styles';
 
 type BaseProps = {
   disabled?: boolean;
   link?: boolean;
-  type?: "button" | "submit";
+  type?: 'button' | 'submit';
   loading?: boolean;
   children: string | JSX.Element | JSX.Element[];
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -19,5 +19,9 @@ export function Button(props: ButtonProps) {
 }
 
 export function GhostButton(props: BaseProps) {
-  return <GhostButtonWrapper {...props}>{props.children}</GhostButtonWrapper>;
+  return (
+    <GhostButtonWrapper {...props}>
+      <span>{props.children}</span>
+    </GhostButtonWrapper>
+  );
 }

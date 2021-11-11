@@ -1,3 +1,4 @@
+import {darken} from 'polished';
 import styled, {css} from 'styled-components';
 
 export type ButtonVariants = 'primary' | 'warning' | 'error' | 'success';
@@ -30,22 +31,26 @@ const BaseButton = css`
 
 export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   ${BaseButton}
-  color: ${props => props.theme.colors.neutral[500]};
+  color: ${props => props.theme.colors.neutral[600]};
   background: transparent;
   transition: all 0.3s ease;
+  margin: 0 4px;
+  font-size: 18px;
   &:hover {
-    background: ${props => {
-      console.log('bun', props);
-      return props.theme.colors.neutral[200];
-    }};
+    background: ${props => darken(0.1, props.theme.colors.primary[500])};
   }
   &:active {
-    background: ${props => props.theme.colors.neutral[300]};
+    background: ${props => darken(0.2, props.theme.colors.primary[500])};
   }
 
   &:disabled {
     color: ${props => props.theme.colors.neutral[100]};
     background: ${props => props.theme.colors.neutral[300]};
+  }
+
+  span {
+    z-index: 2;
+    opacity: 1;
   }
 `;
 
