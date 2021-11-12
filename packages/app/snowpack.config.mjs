@@ -1,7 +1,7 @@
 export default {
   mount: {
     public: '/',
-    src: '/',
+    src: '/dist',
     '../shared': '/@dplabs/shared',
   },
   plugins: ['@snowpack/plugin-typescript', '@snowpack/plugin-react-refresh'],
