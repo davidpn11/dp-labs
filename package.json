@@ -16,12 +16,10 @@
   "scripts": {
     "clean:modules": "rimraf ./**/node_modules && yarn install",
     "build": "lerna run build",
-    "web:dev": "lerna run --scope @dplabs/app dev --stream",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "web-react:dev": "lerna run --scope @dplabs/app start --stream",
+    "web:dev": "lerna run --scope @dplabs/app start --stream",
     "lib:build": "lerna run --scope @dplabs/shared build --stream",
-    "web-react:build": "lerna run --scope @dplabs/app build --stream",
-    "app:build": "yarn lib:build && yarn web-react:build"
+    "web:build": "lerna run --scope @dplabs/app build --stream",
+    "app:build": "yarn lib:build && yarn web:build"
   },
   "keywords": [
     "lerna",
