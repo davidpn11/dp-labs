@@ -1,3 +1,4 @@
+import {getThemedValues} from '@dplabs/shared';
 import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -10,7 +11,8 @@ html,
 body, #root {
   margin: 0;
   padding: 0;
-  background: ${props => props.theme.colors.neutral[100]};
+  background: ${getThemedValues('background')};
+  color: ${getThemedValues('text')}
 };
 
 p {

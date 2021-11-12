@@ -1,6 +1,6 @@
 import "styled-components";
-import type { Theme } from "../packages/shared/src/theme/index";
+import type { ThemeWithMode } from "../packages/shared/src/theme/index";
 
 declare module "styled-components" {
-  interface DefaultTheme extends Theme {}
+  interface DefaultTheme extends ThemeWithMode {}
 }

@@ -1,6 +1,7 @@
 import 'styled-components';
-import type {Theme} from '@dplabs/shared';
+import type {ThemeWithMode} from '@dplabs/shared';
+import {} from '@dplabs/shared';
 
 declare module 'styled-components' {
-  interface DefaultTheme extends Theme {}
+  interface DefaultTheme extends ThemeWithMode {}
 }

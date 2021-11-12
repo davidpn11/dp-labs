@@ -20,6 +20,14 @@ export const theme = {
       500: '#4A4B53',
       600: '#39393A',
     },
+    light: {
+      text: '#1F2937',
+      background: '#F4F5F7',
+    },
+    dark: {
+      text: '#F3F4F6',
+      background: '#3D3F44',
+    },
     success100: '#529E66',
     success200: '#367B48',
     success300: '#276738',
@@ -54,3 +62,5 @@ export const theme = {
 };
 
 export type Theme = typeof theme;
+export type ThemeWithMode = Theme & {mode: 'light' | 'dark'};
+export type ThemedValues = keyof Theme['colors']['light'];

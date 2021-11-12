@@ -5,10 +5,10 @@ import {theme, Theme} from './';
 type Props = {
   children: React.ReactNode;
   customTheme?: Partial<Theme>;
+  mode: 'light' | 'dark';
 };
 
-export function ThemeProvider({children, customTheme}: Props) {
-  const newTheme = {...theme, ...customTheme};
-  console.log('new', newTheme);
+export function ThemeProvider({children, customTheme, mode}: Props) {
+  const newTheme = {...theme, ...customTheme, mode};
   return <StyledThemeProvider theme={newTheme}>{children}</StyledThemeProvider>;
 }

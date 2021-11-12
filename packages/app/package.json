@@ -28,6 +28,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.15",
     "prettier": "2.3.2",
-    "snowpack": "3.7.1"
+    "snowpack": "3.7.1",
+    "snowpack-plugin-svgr": "^0.1.2"
   }
 }

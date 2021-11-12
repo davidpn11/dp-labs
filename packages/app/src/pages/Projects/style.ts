@@ -22,7 +22,10 @@ export const ToolsContainer = styled.div`
   grid-area: 1 / 5 / 2 / 6;
   width: 64px;
   height: 64px;
-  border: 2px solid goldenrod;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
 `;
 export const PagesContainer = styled.div`
   grid-area: 1 / 2 / 2 / 4;
