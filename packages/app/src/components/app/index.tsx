@@ -1,5 +1,5 @@
 import React from 'react';
-import {ThemeProvider} from '@dplabs/labs-ui';
+import {ThemeProvider} from '@dplabs/shared';
 import {GlobalStyles} from './styles/global';
 import {PageHeader} from '../header';
 import {PageContent} from './styles/style';

@@ -1,11 +1,11 @@
 export default {
   mount: {
     public: '/',
-    src: '/dist',
-    '../labs-ui': '/@dplabs/labs-ui',
+    src: '/',
+    '../shared': '/@dplabs/shared',
   },
   plugins: ['@snowpack/plugin-typescript', '@snowpack/plugin-react-refresh'],
   alias: {
-    '@dplabs/labs-ui': '../labs-ui',
+    '@dplabs/shared': '../shared',
   },
 };

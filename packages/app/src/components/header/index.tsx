@@ -1,4 +1,4 @@
-import {GhostButton} from '@dplabs/labs-ui';
+import {GhostButton} from '@dplabs/shared';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {
