@@ -8,11 +8,13 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html,
-body, #root {
+body, #app {
   margin: 0;
   padding: 0;
   background: ${getThemedValues('background')};
-  color: ${getThemedValues('text')}
+  color: ${getThemedValues('text')};
+  width: 100vw;
+  height: 100vh;
 };
 
 p {
