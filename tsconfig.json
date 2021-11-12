@@ -6,13 +6,12 @@
     },
     "sourceMap": true,
     "module": "esnext",
-    "jsx": "react",
     "target": "es5",
     "strict": true,
     "declaration": true,
     "esModuleInterop": true,
     "types": []
   },
-  "include": ["src", "@types"],
+  "include": ["@types"],
   "exclude": ["node_modules", "dist", "build"]
 }

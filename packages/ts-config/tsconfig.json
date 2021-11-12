@@ -1,5 +1,4 @@
 {
-  "extends": "@dplabs/ts-config",
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",

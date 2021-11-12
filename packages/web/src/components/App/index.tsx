@@ -1,7 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from '@dplabs/labs-ui';
 import {GlobalStyles} from './styles/global';
-import {HeaderContainer} from '../header/style';
 import {PageHeader} from '../header';
 import {PageContent} from './styles/style';
 import {Routes, Route} from 'react-router-dom';
