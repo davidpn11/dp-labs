@@ -1,0 +1,4 @@
+{
+  "extends": "@dplabs/ts-config",
+  "include": ["src", "@types"]
+}

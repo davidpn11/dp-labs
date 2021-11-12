@@ -3,6 +3,7 @@ export default {
     public: '/',
     src: '/dist',
     '../shared': '/@dplabs/shared',
+    '../blog-app': '/@dplabs/blog-app',
   },
   routes: [
     {
@@ -18,5 +19,6 @@ export default {
   ],
   alias: {
     '@dplabs/shared': '../shared',
+    '@dplabs/blog-app': '../blog-app',
   },
 };
