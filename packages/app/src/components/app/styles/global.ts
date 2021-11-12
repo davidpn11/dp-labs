@@ -4,7 +4,7 @@ import {createGlobalStyle} from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
-  font-family: var(--font-family-primary);
+  font-family: 'Overpass', sans-serif;
 }
 
 html,

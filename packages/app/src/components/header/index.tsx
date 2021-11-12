@@ -7,7 +7,7 @@ import {
   LogoContainer,
   HeaderContainer,
   ToolsContainer,
-} from '../../pages/Projects/style';
+} from '../../styles/style';
 import Moon from '../../assets/Moon.svg';
 import Sun from '../../assets/Sun.svg';
 

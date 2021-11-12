@@ -1,5 +1,6 @@
 import React from 'react';
+import {ProjectWrapper} from '@dplabs/shared';
 
 export default function About() {
-  return <div>This is the about page</div>;
+  return <ProjectWrapper>This is the about page</ProjectWrapper>;
 }
