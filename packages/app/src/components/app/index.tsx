@@ -4,12 +4,7 @@ import {GlobalStyles} from './styles/global';
 import {PageHeader} from '../header';
 import {PageContent} from './styles/style';
 import {Routes, Route} from 'react-router-dom';
-import {Home} from '../../pages/Home';
-import {Projects} from '../../pages/Projects';
-import {Library} from '../../pages/Library';
-import {About} from '../../pages/About';
-import {Blog} from '../../pages/Blog';
-import {Page404} from '../../pages/404';
+import routes from '../../routes';
 
 export function App() {
   return (
@@ -17,13 +12,13 @@ export function App() {
       <GlobalStyles />
       <PageHeader />
       <PageContent>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="library" element={<Library />} />
-          <Route path="about" element={<About />} />
-        </Routes>
+        <React.Suspense fallback={<span> loading...</span>}>
+          <Routes>
+            {routes.map(({path, Component}) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
+          </Routes>
+        </React.Suspense>
       </PageContent>
     </ThemeProvider>
   );

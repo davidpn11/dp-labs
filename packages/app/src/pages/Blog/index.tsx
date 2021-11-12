@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function Blog() {
+export default function Blog() {
   return <div>This is the Blog page</div>;
 }
