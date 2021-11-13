@@ -14,7 +14,9 @@ const Wrapper = styled.div`
 export const PrimaryButton = () => (
   <Wrapper>
     <h1>Button</h1>
-    <GhostButton onClick={() => {}}>Ghost Button</GhostButton>
+    <GhostButton variant="inverted" onClick={() => {}}>
+      Ghost Button
+    </GhostButton>
   </Wrapper>
 );
 

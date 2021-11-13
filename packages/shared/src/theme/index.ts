@@ -13,7 +13,7 @@ export const theme = {
       300: '#4D194D',
     },
     neutral: {
-      100: '#F9FAFB',
+      100: '#F3F4F6',
       200: '#F4F5F7',
       300: '#D1D5DB',
       400: '#737581',

@@ -1,5 +1,11 @@
 import React from 'react';
-import {ButtonVariants, GhostButtonWrapper, ButtonWrapper} from './styles';
+import {
+  ButtonVariants,
+  GhostButtonVariants,
+  GhostButtonWrapper,
+  ButtonWrapper,
+  ActiveBar,
+} from './styles';
 
 type BaseProps = {
   disabled?: boolean;
@@ -18,10 +24,21 @@ export function Button(props: ButtonProps) {
   return <ButtonWrapper {...props}>{props.children}</ButtonWrapper>;
 }
 
-export function GhostButton(props: BaseProps) {
+type GhostButtomProps = BaseProps & {
+  variant?: GhostButtonVariants;
+  active?: boolean;
+};
+
+export function GhostButton({
+  variant = 'default',
+  children,
+  active,
+  ...props
+}: GhostButtomProps) {
   return (
-    <GhostButtonWrapper {...props}>
-      <span>{props.children}</span>
+    <GhostButtonWrapper variant={variant} {...props}>
+      <span>{children}</span>
+      {active && <ActiveBar />}
     </GhostButtonWrapper>
   );
 }

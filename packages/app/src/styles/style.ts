@@ -1,3 +1,4 @@
+import {getThemedValues} from '@dplabs/shared';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
@@ -6,8 +7,8 @@ export const HeaderContainer = styled.header`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background: ${props => props.theme.colors.primary[500]};
-  color: ${props => props.theme.colors.neutral[200]};
+  background: ${props => props.theme.colors.secondary[300]};
+  color: ${props => props.theme.colors.neutral[100]};
   overflow-x: auto;
   padding: 0 8px;
 
@@ -33,6 +34,10 @@ export const ToolsContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-end;
+
+  svg {
+    fill: ${getThemedValues('text')};
+  }
 `;
 export const PagesContainer = styled.div`
   grid-area: routes;

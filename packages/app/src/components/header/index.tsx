@@ -1,6 +1,6 @@
 import {GhostButton} from '@dplabs/shared';
 import React, {useContext} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useParams} from 'react-router-dom';
 import {ThemeContext} from '../ThemeProvider';
 import {
   PagesContainer,
@@ -11,8 +11,17 @@ import {
 import Moon from '../../assets/Moon.svg';
 import Sun from '../../assets/Sun.svg';
 
+function isActive(path: string) {
+  return;
+}
+
 export function PageHeader() {
   const {toggleMode, mode} = useContext(ThemeContext);
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    return path === location.pathname;
+  };
   return (
     <HeaderContainer>
       <Link to="/">
@@ -20,20 +29,28 @@ export function PageHeader() {
       </Link>
       <PagesContainer>
         <Link to="blog">
-          <GhostButton>Blog</GhostButton>
+          <GhostButton active={isActive('/blog')} variant="inverted">
+            Blog
+          </GhostButton>
         </Link>
         <Link to="/projects">
-          <GhostButton>Projects</GhostButton>
+          <GhostButton active={isActive('/projects')} variant="inverted">
+            Projects
+          </GhostButton>
         </Link>
         <Link to="/library">
-          <GhostButton>Library</GhostButton>
+          <GhostButton active={isActive('/library')} variant="inverted">
+            Library
+          </GhostButton>
         </Link>
         <Link to="/about">
-          <GhostButton>About</GhostButton>
+          <GhostButton active={isActive('/about')} variant="inverted">
+            About
+          </GhostButton>
         </Link>
       </PagesContainer>
       <ToolsContainer onClick={toggleMode}>
-        {mode === 'light' ? <Sun /> : <Moon />}
+        {mode === 'light' ? <Sun fill={'white'} /> : <Moon fill={'white'} />}
       </ToolsContainer>
     </HeaderContainer>
   );

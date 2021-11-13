@@ -3,6 +3,8 @@ import styled, {css} from 'styled-components';
 
 export type ButtonVariants = 'primary' | 'warning' | 'error' | 'success';
 
+export type GhostButtonVariants = 'default' | 'inverted';
+
 type ButtonProps = {
   variant: ButtonVariants;
   rounded?: boolean;
@@ -10,6 +12,7 @@ type ButtonProps = {
 
 type GhostButtonProps = {
   rounded?: boolean;
+  variant: GhostButtonVariants;
 };
 
 const BaseButton = css`
@@ -31,16 +34,20 @@ const BaseButton = css`
 
 export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   ${BaseButton}
-  color: ${props => props.theme.colors.neutral[600]};
+  color: ${props =>
+    props.variant === 'default'
+      ? props.theme.colors.neutral[600]
+      : props.theme.colors.neutral[100]};
   background: transparent;
   transition: all 0.3s ease;
   margin: 0 4px;
+  position: relative;
   font-size: 18px;
   &:hover {
-    background: ${props => darken(0.1, props.theme.colors.primary[500])};
+    background: ${props => darken(0.1, props.theme.colors.secondary[200])};
   }
   &:active {
-    background: ${props => darken(0.2, props.theme.colors.primary[500])};
+    background: ${props => darken(0.2, props.theme.colors.secondary[200])};
   }
 
   &:disabled {
@@ -52,6 +59,14 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
     z-index: 2;
     opacity: 1;
   }
+`;
+
+export const ActiveBar = styled.div`
+  height: 5px;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 4px;
+  background: ${props => props.theme.colors.secondary[100]};
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
