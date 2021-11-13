@@ -8,8 +8,8 @@ import {
   HeaderContainer,
   ToolsContainer,
 } from '../../styles/style';
-import Moon from '../../assets/Moon.svg';
-import Sun from '../../assets/Sun.svg';
+import Moon from '../../assets/MoonWhite.svg';
+import Sun from '../../assets/SunWhite.svg';
 
 function isActive(path: string) {
   return;

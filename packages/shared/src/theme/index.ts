@@ -8,6 +8,7 @@ export const theme = {
       500: '#5D98E7',
     },
     secondary: {
+      50: '#FFD1AA',
       100: '#742674',
       200: '#601F60',
       300: '#4D194D',
