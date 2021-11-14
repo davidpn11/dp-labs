@@ -10,7 +10,6 @@ export const DemoWrapper = styled.div`
     'form form components components';
   grid-row-gap: 12px;
   grid-column-gap: 24px;
-  overflow-x: auto;
 `;
 
 export const ColorSummaryWrapper = styled.div`
@@ -31,6 +30,7 @@ export const ComponentsWrapper = styled.div`
   min-width: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const ColorCircle = styled.div<{color: string}>`
@@ -38,4 +38,5 @@ export const ColorCircle = styled.div<{color: string}>`
   height: 30px;
   border-radius: 4px;
   background: ${props => props.color};
+  margin: 2px 4px;
 `;

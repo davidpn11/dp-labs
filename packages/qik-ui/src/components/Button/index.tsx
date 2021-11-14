@@ -4,6 +4,7 @@ import {
   GhostButtonVariants,
   GhostButtonWrapper,
   ButtonWrapper,
+  ActiveBar,
 } from './styles';
 
 type BaseProps = {
@@ -37,7 +38,7 @@ export function GhostButton({
   return (
     <GhostButtonWrapper variant={variant} {...props}>
       <span>{children}</span>
-      {/* {active && <ActiveBar />} */}
+      {active && <ActiveBar />}
     </GhostButtonWrapper>
   );
 }

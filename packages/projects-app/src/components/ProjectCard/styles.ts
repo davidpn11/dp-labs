@@ -1,7 +1,7 @@
 import styled, {css, StyledComponent} from 'styled-components';
 import {getThemedValues} from '@dplabs/shared';
 
-export const Overlay = styled.div<{onDisplay: boolean}>`
+export const Overlay = styled.div<{expand: boolean}>`
   position: absolute;
   width: 400px;
   height: 220px;
@@ -10,6 +10,7 @@ export const Overlay = styled.div<{onDisplay: boolean}>`
   color: ${props => props.theme.colors.neutral[100]};
   font-weight: bold;
   display: flex;
+  border-radius: 0.5rem;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -20,16 +21,17 @@ export const Overlay = styled.div<{onDisplay: boolean}>`
   }
 `;
 
-export const ProjectCardWrapper = styled.div<{onDisplay: boolean}>`
+export const ProjectCardWrapper = styled.div<{expand: boolean}>`
   width: 400px;
   height: 220px;
   ${props =>
-    props.onDisplay &&
+    props.expand &&
     css`
       max-height: 100%;
       max-width: 100%;
       width: fit-content;
       height: 100%;
+      padding: 4px 8px;
     `}
   display: flex;
   flex-direction: column;

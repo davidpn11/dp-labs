@@ -1,7 +1,7 @@
 import {darken} from 'polished';
 import styled, {css} from 'styled-components';
 
-export type ButtonVariants = 'primary' | 'warning' | 'error' | 'success';
+export type ButtonVariants = 'primary' | 'secondary';
 
 export type GhostButtonVariants = 'default' | 'inverted';
 
@@ -45,6 +45,7 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   font-size: 18px;
   &:hover {
     background: ${props => props.theme.colors.primary[200]};
+    color: ${props => props.theme.colors.neutral[200]};
   }
   &:active {
     background: ${props => props.theme.colors.primary[300]};
@@ -61,13 +62,13 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   }
 `;
 
-// export const ActiveBar = styled.div`
-//   height: 5px;
-//   width: 100%;
-//   border-radius: 4px;
-//   margin-top: 4px;
-//   background: ${props => props.theme.colors.secondary[100]};
-// `;
+export const ActiveBar = styled.div`
+  height: 5px;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 4px;
+  background: ${props => props.theme.colors.primary[100]};
+`;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   ${BaseButton}
@@ -78,17 +79,9 @@ export const ButtonWrapper = styled.button<ButtonProps>`
         return css`
           background-color: ${props => props.theme.colors.primary[100]};
         `;
-      case 'warning':
+      case 'secondary':
         return css`
-          background-color: ${props => props.theme.colors.yellow};
-        `;
-      case 'error':
-        return css`
-          background-color: ${props => props.theme.colors.red};
-        `;
-      case 'success':
-        return css`
-          background-color: ${props => props.theme.colors.green};
+          background-color: ${props => props.theme.colors.neutral[500]};
         `;
       default:
         break;
@@ -102,17 +95,10 @@ export const ButtonWrapper = styled.button<ButtonProps>`
           return css`
             background-color: ${props => props.theme.colors.primary[300]};
           `;
-        case 'warning':
+        case 'secondary':
           return css`
-            background-color: ${props => props.theme.colors.yellow};
-          `;
-        case 'error':
-          return css`
-            background-color: ${props => props.theme.colors.red};
-          `;
-        case 'success':
-          return css`
-            background-color: ${props => props.theme.colors.green};
+            background-color: ${props =>
+              darken(0.2, props.theme.colors.neutral[500])};
           `;
         default:
           break;
@@ -127,17 +113,10 @@ export const ButtonWrapper = styled.button<ButtonProps>`
           return css`
             background-color: ${props => props.theme.colors.primary[200]};
           `;
-        case 'warning':
+        case 'secondary':
           return css`
-            background-color: ${props => props.theme.colors.yellow};
-          `;
-        case 'error':
-          return css`
-            background-color: ${props => props.theme.colors.red};
-          `;
-        case 'success':
-          return css`
-            background-color: ${props => props.theme.colors.green};
+            background-color: ${props =>
+              darken(0.1, props.theme.colors.neutral[500])};
           `;
         default:
           break;
@@ -146,6 +125,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   &:focus {
-    border: 2px solid ${props => props.theme.colors.primary[200]};
+    border: 2px solid ${props => props.theme.colors.neutral[500]};
   }
 `;

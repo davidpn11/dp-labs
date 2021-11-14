@@ -19,7 +19,6 @@ function ColorSummary() {
       <h4>Primary and Accent</h4>
       <span>
         {Object.entries(theme.colors.primary).map(([key, value]) => {
-          console.log(key, value);
           return <ColorCircle color={value} />;
         })}
         <ColorCircle color={theme.colors.accent.default} />
@@ -59,12 +58,12 @@ export function Demo() {
         <ColorSummary />
         <ThemeGenFormWrapper>Form Comess here</ThemeGenFormWrapper>
         <ComponentsWrapper>
-          <Button variant="primary">Button</Button>
-          <Button variant="error">Button</Button>
-          <Button variant="success">Button</Button>
-          <Button variant="warning">Button</Button>
-          <GhostButton variant="default">Ghost Button</GhostButton>
-          <GhostButton variant="inverted">Ghost Button</GhostButton>
+          <Button variant="primary">Primary Button</Button>
+          <Button variant="secondary">Secondary Button</Button>
+          <GhostButton variant="default" active>
+            Ghost Button
+          </GhostButton>
+          <GhostButton variant="inverted">Inverted Ghost Button</GhostButton>
         </ComponentsWrapper>
       </DemoWrapper>
     </ThemeProvider>
