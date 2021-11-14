@@ -11,7 +11,6 @@ export function ProjectList() {
   const onClick = (name: string) => () => setOnDisplay(name);
   return (
     <>
-      {onDisplay}
       {demos.map(demo => (
         <ProjectCard
           onDisplay={demo.name === onDisplay}
