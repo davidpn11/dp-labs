@@ -11,9 +11,9 @@ export const ProjectWrapper = styled.div`
   }
   @media screen and (max-width: 600px) {
     padding: 8px 8px 0;
-  }
 
-  > div {
-    max-width: 400px;
+    > div {
+      max-width: 400px;
+    }
   }
 `;

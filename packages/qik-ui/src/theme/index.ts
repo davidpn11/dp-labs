@@ -5,9 +5,9 @@ export type ThemeGenParams = {
   accentColor: string;
   mainDark: string;
   mainWhite: string;
-  green?: string;
-  red?: string;
-  yellow?: string;
+  green: string;
+  red: string;
+  yellow: string;
 };
 
 export type Theme = {
@@ -35,7 +35,7 @@ export type Theme = {
   };
 };
 
-const defaultTheme: Theme = {
+export const defaultTheme: Theme = {
   colors: {
     primary: {
       100: '#742674',
@@ -90,7 +90,6 @@ export function themeGen({
 
   return {
     colors: {
-      ...defaultTheme.colors,
       primary: primaries,
       accent,
       neutral,
