@@ -1,6 +1,5 @@
 import React, {PropsWithChildren} from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
-// import {theme, Theme} from './';
 import {Theme, defaultTheme, themeGen, ThemeGenParams} from '../../theme';
 
 type Props = {

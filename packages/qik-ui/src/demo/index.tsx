@@ -23,15 +23,13 @@ function ColorSummary() {
         {Object.entries(theme.colors.primary).map(([key, value]) => {
           return <ColorCircle color={value} />;
         })}
-        <ColorCircle color={theme.colors.accent.default} />
-        <ColorCircle color={theme.colors.accent.strong} />
+        <ColorCircle color={theme.colors.accent} />
       </span>
       <h4>Neutral</h4>
       <span>
-        {Object.entries(theme.colors.neutral).map(([key, value]) => {
-          console.log(key, value);
-          return <ColorCircle color={value} />;
-        })}
+        {Object.entries(theme.colors.neutral).map(([key, value]) => (
+          <ColorCircle color={value} />
+        ))}
       </span>
       <h4>Misc</h4>
       <span>
@@ -51,6 +49,7 @@ const initialGenParams: ThemeGenParams = {
   green: 'green',
   yellow: 'gold',
   red: 'firebrick',
+  fontFamily: 'Overpass',
 };
 
 export function Demo() {
