@@ -43,6 +43,10 @@ export const ComponentsWrapper = styled.div`
   > * {
     margin-top: 12px;
   }
+
+  @media screen and (max-width: 600px) {
+    min-width: auto;
+  }
 `;
 
 export const ColorCircle = styled.div<{color: string}>`

@@ -29,6 +29,7 @@ export const ProjectCardWrapper = styled.div<{expand: boolean}>`
     css`
       max-height: 100%;
       max-width: 100%;
+      min-width: 400px;
       width: fit-content;
       height: 100%;
       padding: 4px 8px;
