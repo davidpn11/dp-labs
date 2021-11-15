@@ -67,7 +67,7 @@ export const ActiveBar = styled.div`
   width: 100%;
   border-radius: 4px;
   margin-top: 4px;
-  background: ${props => props.theme.colors.primary[100]};
+  background: ${props => props.theme.colors.accent.default};
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, GhostButton} from '../components/Button';
 import {ThemeProvider} from '../components/Provider';
 import {themeGen, ThemeGenParams, Theme} from '../theme';
@@ -10,6 +10,8 @@ import {
   ColorCircle,
 } from './styles';
 import {useTheme} from 'styled-components';
+import {TextField} from '../components/TextField';
+import {getValueAndUnit} from 'polished';
 
 function ColorSummary() {
   const theme = useTheme();
@@ -41,22 +43,63 @@ function ColorSummary() {
   );
 }
 
+const initialGenParams: ThemeGenParams = {
+  primaryColor: '#601F60',
+  accentColor: '#F49D37',
+  mainWhite: '#D1D5DB',
+  mainDark: '#4A4B53',
+  green: 'green',
+  yellow: 'gold',
+  red: 'firebrick',
+};
+
 export function Demo() {
-  const params: ThemeGenParams = {
-    primaryColor: '#601F60',
-    accentColor: '#F49D37',
-    mainWhite: '#D1D5DB',
-    mainDark: '#4A4B53',
-    green: 'green',
-    yellow: 'gold',
-    red: 'firebrick',
+  const [genParams, setGenParams] = useState<ThemeGenParams>(initialGenParams);
+  const [editedGenParams, setEditedGenParams] = useState<ThemeGenParams>(
+    initialGenParams,
+  );
+
+  const onChangeParams = (key: keyof ThemeGenParams) => (value: string) => {
+    setEditedGenParams({...genParams, [key]: value});
+  };
+
+  useEffect(() => {
+    setEditedGenParams(genParams);
+  }, [genParams]);
+
+  const onSubmit = () => {
+    setGenParams(editedGenParams);
   };
 
   return (
-    <ThemeProvider genParams={params} mode="light">
+    <ThemeProvider genParams={genParams} mode="light">
       <DemoWrapper>
         <ColorSummary />
-        <ThemeGenFormWrapper>Form Comess here</ThemeGenFormWrapper>
+        <ThemeGenFormWrapper>
+          <TextField
+            value={editedGenParams.primaryColor}
+            label={'Primary'}
+            onChange={onChangeParams('primaryColor')}
+          />
+          <TextField
+            value={editedGenParams.accentColor}
+            label={'Accent'}
+            onChange={onChangeParams('accentColor')}
+          />
+          <TextField
+            value={editedGenParams.mainWhite}
+            label={'White'}
+            onChange={onChangeParams('mainWhite')}
+          />
+          <TextField
+            value={editedGenParams.mainDark}
+            label={'Black'}
+            onChange={onChangeParams('mainDark')}
+          />
+          <Button variant="primary" onClick={onSubmit}>
+            Generate
+          </Button>
+        </ThemeGenFormWrapper>
         <ComponentsWrapper>
           <Button variant="primary">Primary Button</Button>
           <Button variant="secondary">Secondary Button</Button>
@@ -64,6 +107,13 @@ export function Demo() {
             Ghost Button
           </GhostButton>
           <GhostButton variant="inverted">Inverted Ghost Button</GhostButton>
+          <TextField value={'Value'} label={'Label'} onChange={() => {}} />
+          <TextField
+            value={''}
+            placeholder={'Placeholder'}
+            label={'Label'}
+            onChange={() => {}}
+          />
         </ComponentsWrapper>
       </DemoWrapper>
     </ThemeProvider>

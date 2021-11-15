@@ -10,6 +10,16 @@ export const DemoWrapper = styled.div`
     'form form components components';
   grid-row-gap: 12px;
   grid-column-gap: 24px;
+  min-width: 1000px;
+
+  @media screen and (max-width: 600px) {
+    min-width: auto;
+    grid-template-areas:
+      'summary summary'
+      'summary summary'
+      'form form '
+      'components components';
+  }
 `;
 
 export const ColorSummaryWrapper = styled.div`
@@ -30,7 +40,9 @@ export const ComponentsWrapper = styled.div`
   min-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  > * {
+    margin-top: 12px;
+  }
 `;
 
 export const ColorCircle = styled.div<{color: string}>`
