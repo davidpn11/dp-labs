@@ -1,12 +1,11 @@
 // Components
-export {TextField} from './components/TextField/';
-export {Button, GhostButton} from './components/Button';
-export {theme} from './theme';
+import {getThemedValues, Button, GhostButton, TextField} from '@dplabs/qik-ui';
+
 export {ThemeProvider} from './theme/ThemeProvider';
 export {ProjectWrapper} from './components/ProjectWrapper';
 
 // Utils
-export {getThemedValues} from './theme/utils';
+export {getThemedValues, Button, GhostButton, TextField};
 
 // Types
-export type {Theme, ThemeWithMode, ThemedValues} from './theme';
+export type {LabsTheme} from './theme';

@@ -11,5 +11,4 @@ export const CardPostWrapper = styled.div`
   background: ${getThemedValues('background')};
   border-radius: 0.5rem;
   margin: 0.75rem;
-  box-shadow: ${props => props.theme.zIndex.z1};
 `;

@@ -1,6 +1,13 @@
 module.exports = {
-  plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-typescript"],
+  mount: {
+    src: '/dist',
+    '../qik-ui': '/@dplabs/qik-ui',
+  },
+  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-typescript'],
   packageOptions: {
-    external: ["react"],
+    external: ['react'],
+  },
+  alias: {
+    '@dplabs/qik-ui': '../qik-ui',
   },
 };
