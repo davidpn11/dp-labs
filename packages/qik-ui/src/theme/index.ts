@@ -1,5 +1,6 @@
 import {lighten, darken} from 'polished';
 
+export type Mode = 'light' | 'dark';
 export type ThemeGenParams = {
   primaryColor: string;
   accentColor: string;
@@ -9,17 +10,22 @@ export type ThemeGenParams = {
   red: string;
   yellow: string;
   fontFamily: string;
+  mode: Mode;
 };
 
 export type Alias = {
   background: string;
   text: string;
+  textInverse: string;
   accent: string;
   hover: string;
   active: string;
 };
 
+export type AliasKeys = keyof Alias;
+
 export type Theme = {
+  mode: Mode;
   colors: {
     primary: {
       100: string;
@@ -52,6 +58,7 @@ export type Theme = {
 };
 
 export const defaultTheme: Theme = {
+  mode: 'light',
   colors: {
     primary: {
       100: '#742674',
@@ -82,6 +89,7 @@ export const defaultTheme: Theme = {
   dark: {
     background: '',
     text: '',
+    textInverse: '',
     accent: '',
     hover: '',
     active: '',
@@ -89,6 +97,7 @@ export const defaultTheme: Theme = {
   light: {
     background: '',
     text: '',
+    textInverse: '',
     accent: '',
     hover: '',
     active: '',
@@ -109,12 +118,6 @@ export function themeGen({
     300: darken(0.1, primaryColor),
   };
 
-  // const accent = {
-  //   default: lighten(0.1, accentColor),
-  //   strong: darken(0.1, primaryColor),
-  //   300: darken(0.1, primaryColor),
-  // };
-
   const neutral = {
     100: lighten(0.1, mainWhite),
     200: mainWhite,
@@ -124,7 +127,27 @@ export function themeGen({
     600: darken(0.1, mainDark),
   };
 
+  const alias: {light: Alias; dark: Alias} = {
+    light: {
+      background: neutral[200],
+      text: neutral[500],
+      accent: primaries[200],
+      hover: primaries[200],
+      active: primaries[300],
+      textInverse: neutral[200],
+    },
+    dark: {
+      background: neutral[500],
+      accent: accentColor,
+      text: neutral[200],
+      textInverse: neutral[500],
+      hover: primaries[200],
+      active: primaries[300],
+    },
+  };
+
   return {
+    mode: 'light',
     colors: {
       primary: primaries,
       neutral,
@@ -139,19 +162,6 @@ export function themeGen({
         extraBold: '800',
       },
     },
-    dark: {
-      background: neutral[100],
-      text: neutral[500],
-      accent: primaries[200],
-      hover: primaries[200],
-      active: primaries[300],
-    },
-    light: {
-      background: neutral[500],
-      text: neutral[200],
-      accent: accentColor,
-      hover: primaries[200],
-      active: primaries[300],
-    },
+    ...alias,
   };
 }

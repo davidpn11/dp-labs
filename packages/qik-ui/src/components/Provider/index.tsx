@@ -16,7 +16,7 @@ export function ThemeProvider({
 }: PropsWithChildren<Props>) {
   // const newTheme: Theme = {...defaultTheme, ...customTheme};
   const theme = themeGen(genParams);
-  const newTheme: Theme = {...theme, ...customTheme};
+  const newTheme: Theme = {...theme, ...customTheme, mode};
 
   return <StyledThemeProvider theme={newTheme}>{children}</StyledThemeProvider>;
 }

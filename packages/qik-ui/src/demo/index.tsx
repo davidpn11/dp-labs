@@ -50,6 +50,7 @@ const initialGenParams: ThemeGenParams = {
   yellow: 'gold',
   red: 'firebrick',
   fontFamily: 'Overpass',
+  mode: 'light',
 };
 
 export function Demo() {
@@ -61,6 +62,11 @@ export function Demo() {
   const onChangeParams = (key: keyof ThemeGenParams) => (value: string) => {
     setEditedGenParams({...genParams, [key]: value});
   };
+  const toggleMode = () =>
+    setEditedGenParams({
+      ...editedGenParams,
+      mode: genParams.mode === 'light' ? 'dark' : 'light',
+    });
 
   useEffect(() => {
     setEditedGenParams(genParams);
@@ -71,7 +77,7 @@ export function Demo() {
   };
 
   return (
-    <ThemeProvider genParams={genParams} mode="light">
+    <ThemeProvider genParams={genParams} mode={genParams.mode}>
       <DemoWrapper>
         <ColorSummary />
         <ThemeGenFormWrapper>
@@ -95,6 +101,9 @@ export function Demo() {
             label={'Black'}
             onChange={onChangeParams('mainDark')}
           />
+          <p onClick={toggleMode}>
+            Mode {editedGenParams.mode === 'light' ? 'LIGHT' : 'DARK'}
+          </p>
           <Button variant="primary" onClick={onSubmit}>
             Generate
           </Button>

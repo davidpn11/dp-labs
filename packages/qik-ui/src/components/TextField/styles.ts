@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {getThemedValues} from '../utils';
 
 export const FieldWrapper = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const FieldWrapper = styled.div`
 export const FieldLabel = styled.strong`
   font-size: 14px;
   letter-spacing: 0.5px;
-  color: ${props => props.theme.colors.primary[300]};
+  color: ${getThemedValues('accent')};
 `;
 
 export const FieldInput = styled.input`
@@ -21,7 +22,8 @@ export const FieldInput = styled.input`
   background: transparent;
   align-self: flex-start;
   min-width: 250px;
-  border: 1px solid ${props => props.theme.colors.primary[200]};
+  color: ${getThemedValues('text')};
+  border: 1px solid ${getThemedValues('accent')};
   &::placeholder {
     color: 2px solid ${props => props.theme.colors.neutral[400]};
   }
