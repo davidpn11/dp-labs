@@ -1,5 +1,6 @@
 import {darken} from 'polished';
 import styled, {css} from 'styled-components';
+import {getThemedValues} from '../utils';
 
 export type ButtonVariants = 'primary' | 'secondary';
 
@@ -17,7 +18,7 @@ type GhostButtonProps = {
 
 const BaseButton = css`
   font-family: 'Arial';
-  font-weight: 600;
+  font-weight: ${[props => props.theme.font.weight.bold]};
   cursor: pointer;
   overflow: hidden;
   letter-spacing: 0.5px;
@@ -36,8 +37,8 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   ${BaseButton}
   color: ${props =>
     props.variant === 'default'
-      ? props.theme.colors.neutral[600]
-      : props.theme.colors.neutral[100]};
+      ? getThemedValues('text')
+      : getThemedValues('textInverse')};
   background: transparent;
   transition: all 0.3s ease;
   margin: 0 4px;
@@ -67,7 +68,7 @@ export const ActiveBar = styled.div`
   width: 100%;
   border-radius: 4px;
   margin-top: 4px;
-  background: ${props => props.theme.colors.accent.default};
+  background: ${getThemedValues('accent')};
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`

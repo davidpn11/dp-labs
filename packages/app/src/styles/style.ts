@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background: ${props => props.theme.colors.secondary[300]};
+  background: ${props => props.theme.colors.primary[300]};
   color: ${props => props.theme.colors.neutral[100]};
   overflow-x: auto;
   padding: 0 8px;

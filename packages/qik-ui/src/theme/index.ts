@@ -1,5 +1,6 @@
 import {lighten, darken} from 'polished';
 
+export type Mode = 'light' | 'dark';
 export type ThemeGenParams = {
   primaryColor: string;
   accentColor: string;
@@ -8,18 +9,28 @@ export type ThemeGenParams = {
   green: string;
   red: string;
   yellow: string;
+  fontFamily: string;
+  mode: Mode;
 };
 
+export type Alias = {
+  background: string;
+  text: string;
+  textInverse: string;
+  accent: string;
+  hover: string;
+  active: string;
+};
+
+export type AliasKeys = keyof Alias;
+
 export type Theme = {
+  mode: Mode;
   colors: {
     primary: {
       100: string;
       200: string;
       300: string;
-    };
-    accent: {
-      default: string;
-      strong: string;
     };
     neutral: {
       100: string;
@@ -29,22 +40,30 @@ export type Theme = {
       500: string;
       600: string;
     };
+    accent: string;
     green: string;
     red: string;
     yellow: string;
   };
+  font: {
+    family: string;
+    weight: {
+      regular: string;
+      bold: string;
+      extraBold: string;
+    };
+  };
+  light: Alias;
+  dark: Alias;
 };
 
 export const defaultTheme: Theme = {
+  mode: 'light',
   colors: {
     primary: {
       100: '#742674',
       200: '#601F60',
       300: '#4D194D',
-    },
-    accent: {
-      default: '#F49D37',
-      strong: '#F49D37',
     },
     neutral: {
       100: '#F3F4F6',
@@ -54,9 +73,34 @@ export const defaultTheme: Theme = {
       500: '#4A4B53',
       600: '#4A4B53',
     },
+    accent: '#F49D37',
     green: '#367B48',
     red: 'B54248',
     yellow: 'CAB23F',
+  },
+  font: {
+    family: 'Core Sans',
+    weight: {
+      regular: 'normal',
+      bold: '600',
+      extraBold: '800',
+    },
+  },
+  dark: {
+    background: '',
+    text: '',
+    textInverse: '',
+    accent: '',
+    hover: '',
+    active: '',
+  },
+  light: {
+    background: '',
+    text: '',
+    textInverse: '',
+    accent: '',
+    hover: '',
+    active: '',
   },
 };
 
@@ -65,17 +109,12 @@ export function themeGen({
   accentColor,
   mainDark,
   mainWhite,
+  fontFamily,
   ...rest
 }: ThemeGenParams): Theme {
   const primaries = {
     100: lighten(0.1, primaryColor),
     200: primaryColor,
-    300: darken(0.1, primaryColor),
-  };
-
-  const accent = {
-    default: lighten(0.1, accentColor),
-    strong: darken(0.1, primaryColor),
     300: darken(0.1, primaryColor),
   };
 
@@ -88,12 +127,41 @@ export function themeGen({
     600: darken(0.1, mainDark),
   };
 
+  const alias: {light: Alias; dark: Alias} = {
+    light: {
+      background: neutral[200],
+      text: neutral[500],
+      accent: primaries[200],
+      hover: primaries[200],
+      active: primaries[300],
+      textInverse: neutral[200],
+    },
+    dark: {
+      background: neutral[500],
+      accent: accentColor,
+      text: neutral[200],
+      textInverse: neutral[500],
+      hover: primaries[200],
+      active: primaries[300],
+    },
+  };
+
   return {
+    mode: 'light',
     colors: {
       primary: primaries,
-      accent,
       neutral,
+      accent: accentColor,
       ...rest,
     },
+    font: {
+      family: fontFamily,
+      weight: {
+        regular: 'normal',
+        bold: '600',
+        extraBold: '800',
+      },
+    },
+    ...alias,
   };
 }

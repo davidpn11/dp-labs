@@ -23,15 +23,13 @@ function ColorSummary() {
         {Object.entries(theme.colors.primary).map(([key, value]) => {
           return <ColorCircle color={value} />;
         })}
-        <ColorCircle color={theme.colors.accent.default} />
-        <ColorCircle color={theme.colors.accent.strong} />
+        <ColorCircle color={theme.colors.accent} />
       </span>
       <h4>Neutral</h4>
       <span>
-        {Object.entries(theme.colors.neutral).map(([key, value]) => {
-          console.log(key, value);
-          return <ColorCircle color={value} />;
-        })}
+        {Object.entries(theme.colors.neutral).map(([key, value]) => (
+          <ColorCircle color={value} />
+        ))}
       </span>
       <h4>Misc</h4>
       <span>
@@ -51,6 +49,8 @@ const initialGenParams: ThemeGenParams = {
   green: 'green',
   yellow: 'gold',
   red: 'firebrick',
+  fontFamily: 'Overpass',
+  mode: 'light',
 };
 
 export function Demo() {
@@ -62,6 +62,11 @@ export function Demo() {
   const onChangeParams = (key: keyof ThemeGenParams) => (value: string) => {
     setEditedGenParams({...genParams, [key]: value});
   };
+  const toggleMode = () =>
+    setEditedGenParams({
+      ...editedGenParams,
+      mode: genParams.mode === 'light' ? 'dark' : 'light',
+    });
 
   useEffect(() => {
     setEditedGenParams(genParams);
@@ -72,7 +77,7 @@ export function Demo() {
   };
 
   return (
-    <ThemeProvider genParams={genParams} mode="light">
+    <ThemeProvider genParams={genParams} mode={genParams.mode}>
       <DemoWrapper>
         <ColorSummary />
         <ThemeGenFormWrapper>
@@ -96,6 +101,9 @@ export function Demo() {
             label={'Black'}
             onChange={onChangeParams('mainDark')}
           />
+          <p onClick={toggleMode}>
+            Mode {editedGenParams.mode === 'light' ? 'LIGHT' : 'DARK'}
+          </p>
           <Button variant="primary" onClick={onSubmit}>
             Generate
           </Button>
