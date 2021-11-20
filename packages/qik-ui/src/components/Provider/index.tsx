@@ -19,5 +19,6 @@ export function ThemeProvider<T = {}>({
   const theme = themeGen(genParams);
   const newTheme: Theme = {...theme, ...customTheme, ...additional, mode};
 
+  //@ts-ignore
   return <StyledThemeProvider theme={newTheme}>{children}</StyledThemeProvider>;
 }
