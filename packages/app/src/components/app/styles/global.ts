@@ -1,4 +1,4 @@
-import {getThemedValues} from '@dplabs/shared';
+import {getThemedValues} from '@dplabs/qik-ui';
 import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`

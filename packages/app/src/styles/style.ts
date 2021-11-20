@@ -1,4 +1,4 @@
-import {getThemedValues} from '@dplabs/shared';
+import {getThemedValues} from '@dplabs/qik-ui';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`

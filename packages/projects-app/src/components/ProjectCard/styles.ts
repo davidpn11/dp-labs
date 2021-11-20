@@ -1,5 +1,5 @@
-import styled, {css, StyledComponent} from 'styled-components';
-import {getThemedValues} from '@dplabs/shared';
+import styled, {css} from 'styled-components';
+import {getThemedValues} from '@dplabs/qik-ui';
 
 export const Overlay = styled.div<{expand: boolean}>`
   position: absolute;

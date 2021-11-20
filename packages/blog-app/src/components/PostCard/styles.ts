@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {getThemedValues} from '@dplabs/shared';
+import {getThemedValues} from '@dplabs/qik-ui';
 
 export const CardPostWrapper = styled.div`
   min-width: 400px;
