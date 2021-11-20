@@ -17,6 +17,7 @@
     "@babel/core": "^7.15.8",
     "@dplabs/prettier-config": "^1.0.1",
     "@dplabs/ts-config": "^1.0.1",
+    "@dplabs/qik-ui": "^1.0.0",
     "@snowpack/plugin-react-refresh": "2.5.0",
     "@snowpack/plugin-typescript": "1.2.1",
     "@types/react": "^17.0.0",

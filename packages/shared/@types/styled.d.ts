@@ -1,5 +1,5 @@
 import 'styled-components';
-import type {LabsTheme} from '@dplabs/shared';
+import {LabsTheme} from '../src/theme/index';
 declare module 'styled-components' {
   interface DefaultTheme extends LabsTheme {}
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {getThemedValues} from '../..';
 
 export const FieldWrapper = styled.div`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,6 +23,6 @@ export const FieldInput = styled.input`
   align-self: flex-start;
   min-width: 250px;
   &:focus {
-    border: 2px solid ${props => props.theme.colors.blue};
+    border: 2px solid ${getThemedValues('accent')};
   }
 `;

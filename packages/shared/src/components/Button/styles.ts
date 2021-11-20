@@ -78,18 +78,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
         return css`
           background-color: ${props => props.theme.colors.primary[100]};
         `;
-      case 'warning':
-        return css`
-          background-color: ${props => props.theme.colors.warning100};
-        `;
-      case 'error':
-        return css`
-          background-color: ${props => props.theme.colors.error100};
-        `;
-      case 'success':
-        return css`
-          background-color: ${props => props.theme.colors.success100};
-        `;
       default:
         break;
     }
@@ -101,18 +89,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
         case 'primary':
           return css`
             background-color: ${props => props.theme.colors.primary[300]};
-          `;
-        case 'warning':
-          return css`
-            background-color: ${props => props.theme.colors.warning300};
-          `;
-        case 'error':
-          return css`
-            background-color: ${props => props.theme.colors.error300};
-          `;
-        case 'success':
-          return css`
-            background-color: ${props => props.theme.colors.success300};
           `;
         default:
           break;
@@ -127,18 +103,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
           return css`
             background-color: ${props => props.theme.colors.primary[200]};
           `;
-        case 'warning':
-          return css`
-            background-color: ${props => props.theme.colors.warning200};
-          `;
-        case 'error':
-          return css`
-            background-color: ${props => props.theme.colors.error200};
-          `;
-        case 'success':
-          return css`
-            background-color: ${props => props.theme.colors.success200};
-          `;
         default:
           break;
       }
@@ -146,6 +110,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   &:focus {
-    border: 2px solid ${props => props.theme.colors.blue};
+    border: 2px solid ${props => props.theme.colors.green};
   }
 `;

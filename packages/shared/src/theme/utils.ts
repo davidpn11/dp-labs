@@ -1,10 +1,10 @@
-import {css} from 'styled-components';
-import {ThemedValues, ThemeWithMode} from '.';
+import {AliasKeys} from '@dplabs/qik-ui';
+import {LabsTheme} from '.';
 
-export function getThemedValues(value: ThemedValues) {
-  return (props: {theme: ThemeWithMode}) => {
+export function getThemedValues(value: AliasKeys) {
+  return (props: {theme: LabsTheme}) => {
     return props.theme.mode === 'light'
-      ? props.theme.colors.light[value]
-      : props.theme.colors.dark[value];
+      ? props.theme.light[value]
+      : props.theme.dark[value];
   };
 }
