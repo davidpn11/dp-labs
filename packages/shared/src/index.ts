@@ -1,6 +1,4 @@
 // Components
-export {TextField} from './components/TextField/';
-export {Button, GhostButton} from './components/Button';
 export {ThemeProvider} from './theme/ThemeProvider';
 export {ProjectWrapper} from './components/ProjectWrapper';
 

@@ -13,6 +13,7 @@
   "author": "David Nascimento",
   "license": "MIT",
   "dependencies": {
+    "@dplabs/qik-ui": "^1.0.0",
     "@dplabs/shared": "^1.0.0",
     "@dplabs/blog-app": "^1.0.0",
     "@dplabs/projects-app": "^1.0.0",

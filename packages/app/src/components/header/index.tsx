@@ -1,4 +1,4 @@
-import {GhostButton} from '@dplabs/shared';
+import {GhostButton} from '@dplabs/qik-ui';
 import React, {useContext} from 'react';
 import {Link, useLocation, useParams} from 'react-router-dom';
 import {ThemeContext} from '../ThemeProvider';

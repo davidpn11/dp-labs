@@ -1,6 +1,6 @@
 import React, {PropsWithChildren} from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
-import {Theme, defaultTheme, themeGen, ThemeGenParams} from '../../theme';
+import {Theme, themeGen, ThemeGenParams} from '../../theme';
 
 type Props<T = {}> = {
   genParams: ThemeGenParams;
@@ -16,7 +16,6 @@ export function ThemeProvider<T = {}>({
   mode,
   genParams,
 }: PropsWithChildren<Props<T>>) {
-  // const newTheme: Theme = {...defaultTheme, ...customTheme};
   const theme = themeGen(genParams);
   const newTheme: Theme = {...theme, ...customTheme, ...additional, mode};
 
