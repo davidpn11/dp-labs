@@ -11,7 +11,6 @@ import {
 } from './styles';
 import {useTheme} from 'styled-components';
 import {TextField} from '../components/TextField';
-import {getValueAndUnit} from 'polished';
 
 function ColorSummary() {
   const theme = useTheme();
@@ -23,7 +22,7 @@ function ColorSummary() {
         {Object.entries(theme.colors.primary).map(([key, value]) => {
           return <ColorCircle color={value} />;
         })}
-        <ColorCircle color={theme.colors.accent} />
+        <ColorCircle color={theme.colors.secondary[200]} />
       </span>
       <h4>Neutral</h4>
       <span>

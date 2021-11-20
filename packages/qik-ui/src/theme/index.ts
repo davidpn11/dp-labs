@@ -32,6 +32,11 @@ export type Theme = {
       200: string;
       300: string;
     };
+    secondary: {
+      100: string;
+      200: string;
+      300: string;
+    };
     neutral: {
       100: string;
       200: string;
@@ -40,7 +45,6 @@ export type Theme = {
       500: string;
       600: string;
     };
-    accent: string;
     green: string;
     red: string;
     yellow: string;
@@ -56,6 +60,8 @@ export type Theme = {
   light: Alias;
   dark: Alias;
 };
+
+export type ThemeCombiner<T = {}> = Theme & T;
 
 export const defaultTheme: Theme = {
   mode: 'light',
@@ -73,7 +79,11 @@ export const defaultTheme: Theme = {
       500: '#4A4B53',
       600: '#4A4B53',
     },
-    accent: '#F49D37',
+    secondary: {
+      100: '#F49D37',
+      200: '#F49D37',
+      300: '#F49D37',
+    },
     green: '#367B48',
     red: 'B54248',
     yellow: 'CAB23F',
@@ -117,6 +127,11 @@ export function themeGen({
     200: primaryColor,
     300: darken(0.1, primaryColor),
   };
+  const secondary = {
+    100: lighten(0.1, accentColor),
+    200: accentColor,
+    300: darken(0.1, accentColor),
+  };
 
   const neutral = {
     100: lighten(0.1, mainWhite),
@@ -150,8 +165,8 @@ export function themeGen({
     mode: 'light',
     colors: {
       primary: primaries,
+      secondary,
       neutral,
-      accent: accentColor,
       ...rest,
     },
     font: {
