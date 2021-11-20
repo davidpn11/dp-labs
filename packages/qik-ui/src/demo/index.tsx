@@ -11,23 +11,23 @@ import {
 } from './styles';
 import {useTheme} from 'styled-components';
 import {TextField} from '../components/TextField';
+import {useThemeContext} from '@dplabs/shared';
 
 function ColorSummary() {
   const theme = useTheme();
-
   return (
     <ColorSummaryWrapper>
       <h4>Primary and Accent</h4>
       <span>
         {Object.entries(theme.colors.primary).map(([key, value]) => {
-          return <ColorCircle color={value} />;
+          return <ColorCircle key={key} color={value} />;
         })}
         <ColorCircle color={theme.colors.secondary[200]} />
       </span>
       <h4>Neutral</h4>
       <span>
         {Object.entries(theme.colors.neutral).map(([key, value]) => (
-          <ColorCircle color={value} />
+          <ColorCircle key={key} color={value} />
         ))}
       </span>
       <h4>Misc</h4>
@@ -53,19 +53,22 @@ const initialGenParams: ThemeGenParams = {
 };
 
 export function Demo() {
-  const [genParams, setGenParams] = useState<ThemeGenParams>(initialGenParams);
+  const themeContext = useThemeContext();
+  const [genParams, setGenParams] = useState<ThemeGenParams>({
+    ...initialGenParams,
+    mode: themeContext.mode,
+  });
   const [editedGenParams, setEditedGenParams] = useState<ThemeGenParams>(
     initialGenParams,
   );
 
+  useEffect(() => {
+    setGenParams({...genParams, mode: themeContext.mode});
+  }, [themeContext.mode]);
+
   const onChangeParams = (key: keyof ThemeGenParams) => (value: string) => {
     setEditedGenParams({...genParams, [key]: value});
   };
-  const toggleMode = () =>
-    setEditedGenParams({
-      ...editedGenParams,
-      mode: genParams.mode === 'light' ? 'dark' : 'light',
-    });
 
   useEffect(() => {
     setEditedGenParams(genParams);
@@ -100,9 +103,6 @@ export function Demo() {
             label={'Black'}
             onChange={onChangeParams('mainDark')}
           />
-          <p onClick={toggleMode}>
-            Mode {editedGenParams.mode === 'light' ? 'LIGHT' : 'DARK'}
-          </p>
           <Button variant="primary" onClick={onSubmit}>
             Generate
           </Button>

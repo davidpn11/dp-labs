@@ -1,5 +1,5 @@
 // Components
-export {ThemeProvider} from './theme/ThemeProvider';
+export {ThemeProvider, useThemeContext} from './theme/ThemeProvider';
 export {ProjectWrapper} from './components/ProjectWrapper';
 
 // Utils

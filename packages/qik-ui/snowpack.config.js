@@ -1,6 +1,9 @@
 module.exports = {
-  plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-typescript"],
+  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-typescript'],
   packageOptions: {
-    external: ["react"],
+    external: ['react'],
+  },
+  alias: {
+    '@dplabs/shared': '../shared',
   },
 };

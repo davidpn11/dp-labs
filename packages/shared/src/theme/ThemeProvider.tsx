@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {themeGenParams, labsComplementaryTheme} from './';
 import {
@@ -10,16 +10,38 @@ import {
 type Props = {
   children: React.ReactNode;
   customTheme?: Partial<Theme>;
-  mode: 'light' | 'dark';
 };
 
-export function ThemeProvider({children, customTheme, mode}: Props) {
+type ModeContextType = {
+  mode: 'light' | 'dark';
+  setMode: (mode: 'light' | 'dark') => void;
+  toggleMode: () => void;
+};
+const initialModeContext: ModeContextType = {
+  mode: 'light',
+  setMode: _ => {},
+  toggleMode: () => {},
+};
+const ModeContext = React.createContext<ModeContextType>(initialModeContext);
+
+export function useThemeContext() {
+  const themeContext = useContext(ModeContext);
+  return themeContext;
+}
+
+export function ThemeProvider({children, customTheme}: Props) {
+  const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light');
+  const setMode = (m: 'light' | 'dark') => setThemeMode(m);
+  const toggleMode = () =>
+    themeMode === 'light' ? setThemeMode('dark') : setThemeMode('light');
   return (
-    <QikThemeProvider
-      genParams={themeGenParams}
-      mode={mode}
-      additional={labsComplementaryTheme}>
-      {children}
-    </QikThemeProvider>
+    <ModeContext.Provider value={{mode: themeMode, setMode, toggleMode}}>
+      <QikThemeProvider
+        genParams={themeGenParams}
+        mode={themeMode}
+        additional={labsComplementaryTheme}>
+        {children}
+      </QikThemeProvider>
+    </ModeContext.Provider>
   );
 }

@@ -1,7 +1,6 @@
 import {GhostButton} from '@dplabs/qik-ui';
 import React, {useContext} from 'react';
 import {Link, useLocation, useParams} from 'react-router-dom';
-import {ThemeContext} from '../ThemeProvider';
 import {
   PagesContainer,
   LogoContainer,
@@ -10,13 +9,14 @@ import {
 } from '../../styles/style';
 import Moon from '../../assets/MoonWhite.svg';
 import Sun from '../../assets/SunWhite.svg';
+import {useThemeContext} from '@dplabs/shared';
 
 function isActive(path: string) {
   return;
 }
 
 export function PageHeader() {
-  const {toggleMode, mode} = useContext(ThemeContext);
+  const {toggleMode, mode} = useThemeContext();
   const location = useLocation();
 
   const isActive = (path: string) => {
