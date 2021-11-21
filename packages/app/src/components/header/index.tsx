@@ -8,7 +8,7 @@ import {
   ToolsContainer,
 } from '../../styles/style';
 import Moon from '../../assets/MoonWhite.svg';
-import Sun from '../../assets/SunWhite.svg';
+import Sun from '../../assets/Sun.svg';
 import {useThemeContext} from '@dplabs/shared';
 
 function isActive(path: string) {
@@ -29,22 +29,22 @@ export function PageHeader() {
       </Link>
       <PagesContainer>
         <Link to="blog">
-          <GhostButton active={isActive('/blog')} variant="inverted">
+          <GhostButton active={isActive('/blog')} variant="default">
             Blog
           </GhostButton>
         </Link>
         <Link to="/projects">
-          <GhostButton active={isActive('/projects')} variant="inverted">
+          <GhostButton active={isActive('/projects')} variant="default">
             Projects
           </GhostButton>
         </Link>
         <Link to="/library">
-          <GhostButton active={isActive('/library')} variant="inverted">
+          <GhostButton active={isActive('/library')} variant="default">
             Library
           </GhostButton>
         </Link>
         <Link to="/about">
-          <GhostButton active={isActive('/about')} variant="inverted">
+          <GhostButton active={isActive('/about')} variant="default">
             About
           </GhostButton>
         </Link>

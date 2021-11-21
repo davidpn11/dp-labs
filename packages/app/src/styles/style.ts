@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   display: grid;
-  grid-template-areas: 'logo logo routes routes routes routes routes routes tools tools';
+  grid-template-areas: 'logo routes routes tools';
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background: ${props => props.theme.colors.secondary[300]};
+  /* background: ${props => props.theme.colors.secondary[300]}; */
+  background: transparent;
   color: ${props => props.theme.colors.neutral[100]};
   overflow-x: auto;
   padding: 0 8px;
@@ -32,7 +33,9 @@ export const ToolsContainer = styled.div`
   display: flex;
   cursor: pointer;
   align-items: center;
+  justify-self: flex-end;
   display: flex;
+  margin-right: 32px;
   justify-content: flex-end;
 
   svg {
@@ -44,6 +47,7 @@ export const PagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 `;
 
 export const PageLink = styled.span`

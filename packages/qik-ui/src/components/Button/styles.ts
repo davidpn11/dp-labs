@@ -1,5 +1,6 @@
-import {darken} from 'polished';
+import {darken, opacify} from 'polished';
 import styled, {css} from 'styled-components';
+import {transparentizeThemedValue} from '../..';
 import {getThemedValues} from '../utils';
 
 export type ButtonVariants = 'primary' | 'secondary';
@@ -45,8 +46,7 @@ export const GhostButtonWrapper = styled.button<GhostButtonProps>`
   position: relative;
   font-size: 18px;
   &:hover {
-    background: ${props => props.theme.colors.primary[200]};
-    color: ${props => props.theme.colors.neutral[200]};
+    background: ${transparentizeThemedValue(0.8, 'accent')};
   }
   &:active {
     background: ${props => props.theme.colors.primary[300]};
