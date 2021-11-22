@@ -11,6 +11,8 @@ import Moon from '../../assets/MoonWhite.svg';
 import Sun from '../../assets/Sun.svg';
 import LogoWhite from '../../assets/logo-white.svg';
 import LogoBlack from '../../assets/logo-black.svg';
+import LogoWhiteActive from '../../assets/logo-white-active.svg';
+import LogoBlackActive from '../../assets/logo-black-active.svg';
 import {useThemeContext} from '@dplabs/shared';
 
 export function PageHeader() {
@@ -20,12 +22,18 @@ export function PageHeader() {
   const isActive = (path: string) => {
     return path === location.pathname;
   };
+
+  const getLogo = () => {
+    if (mode === 'light') {
+      return isActive('/') ? <LogoBlackActive /> : <LogoBlack />;
+    }
+    return isActive('/') ? <LogoWhiteActive /> : <LogoWhite />;
+  };
+
   return (
     <HeaderContainer>
       <Link to="/">
-        <LogoContainer>
-          {mode === 'light' ? <LogoBlack /> : <LogoWhite />}
-        </LogoContainer>
+        <LogoContainer>{getLogo()}</LogoContainer>
       </Link>
       <PagesContainer>
         <Link to="blog">
@@ -38,11 +46,11 @@ export function PageHeader() {
             Projects
           </GhostButton>
         </Link>
-        <Link to="/library">
+        {/* <Link to="/library">
           <GhostButton active={isActive('/library')} variant="default">
             Library
           </GhostButton>
-        </Link>
+        </Link> */}
         <Link to="/about">
           <GhostButton active={isActive('/about')} variant="default">
             About

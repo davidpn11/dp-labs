@@ -1,11 +1,11 @@
 import React from 'react';
-
 import {GlobalStyles} from './styles/global';
 import {PageHeader} from '../header';
 import {Routes, Route} from 'react-router-dom';
 import routes from '../../routes';
 import Page404 from '../../pages/404';
 import {ThemeProvider as SharedThemeProvider} from '@dplabs/shared';
+
 export function App() {
   return (
     <SharedThemeProvider>
