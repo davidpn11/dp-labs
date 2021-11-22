@@ -22,9 +22,11 @@ export const HeaderContainer = styled.header`
 
 export const LogoContainer = styled.div`
   grid-area: logo;
-  width: 64px;
-  height: 64px;
-  border: 2px solid forestgreen;
+  padding: 16px;
+  svg {
+    width: 150px;
+    height: 48px;
+  }
 `;
 export const ToolsContainer = styled.div`
   grid-area: tools;

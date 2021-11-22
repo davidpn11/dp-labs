@@ -9,6 +9,8 @@ import {
 } from '../../styles/style';
 import Moon from '../../assets/MoonWhite.svg';
 import Sun from '../../assets/Sun.svg';
+import LogoWhite from '../../assets/logo-white.svg';
+import LogoBlack from '../../assets/logo-black.svg';
 import {useThemeContext} from '@dplabs/shared';
 
 function isActive(path: string) {
@@ -25,7 +27,9 @@ export function PageHeader() {
   return (
     <HeaderContainer>
       <Link to="/">
-        <LogoContainer></LogoContainer>
+        <LogoContainer>
+          {mode === 'light' ? <LogoBlack /> : <LogoWhite />}
+        </LogoContainer>
       </Link>
       <PagesContainer>
         <Link to="blog">

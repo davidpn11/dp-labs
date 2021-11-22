@@ -1,7 +1,7 @@
 import React from 'react';
 import {Demo as QikUiDemo} from '@dplabs/qik-ui';
 
-type Demo = {
+export type Demo = {
   name: string;
   demoComponent: JSX.Element | null;
 };
