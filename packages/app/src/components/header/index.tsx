@@ -1,6 +1,6 @@
 import {GhostButton} from '@dplabs/qik-ui';
-import React, {useContext} from 'react';
-import {Link, useLocation, useParams} from 'react-router-dom';
+import React from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import {
   PagesContainer,
   LogoContainer,
@@ -12,10 +12,6 @@ import Sun from '../../assets/Sun.svg';
 import LogoWhite from '../../assets/logo-white.svg';
 import LogoBlack from '../../assets/logo-black.svg';
 import {useThemeContext} from '@dplabs/shared';
-
-function isActive(path: string) {
-  return;
-}
 
 export function PageHeader() {
   const {toggleMode, mode} = useThemeContext();

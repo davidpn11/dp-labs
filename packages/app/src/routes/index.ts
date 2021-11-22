@@ -9,14 +9,15 @@ const About = React.lazy(() => import('../pages/About'));
 type Route = {
   path: string;
   Component: React.LazyExoticComponent<() => JSX.Element>;
+  isDisabled: boolean;
 };
 
 const routes: Route[] = [
-  {path: '/', Component: Home},
-  {path: '/projects', Component: Projects},
-  {path: '/blog', Component: Blog},
-  {path: '/library', Component: Library},
-  {path: '/about', Component: About},
+  {path: '/', Component: Home, isDisabled: false},
+  {path: '/projects', Component: Projects, isDisabled: false},
+  {path: '/blog', Component: Blog, isDisabled: false},
+  {path: '/library', Component: Library, isDisabled: true},
+  {path: '/about', Component: About, isDisabled: false},
 ];
 
 export default routes;

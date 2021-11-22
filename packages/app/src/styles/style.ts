@@ -7,11 +7,11 @@ export const HeaderContainer = styled.header`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  /* background: ${props => props.theme.colors.secondary[300]}; */
   background: transparent;
   color: ${props => props.theme.colors.neutral[100]};
   overflow-x: auto;
   padding: 0 8px;
+  align-items: center;
 
   @media screen and (max-width: 600px) {
     grid-template-areas:

@@ -1,5 +1,6 @@
+import {ProjectWrapper} from '@dplabs/shared';
 import React from 'react';
 
 export default function Home() {
-  return <div>This is the Home page</div>;
+  return <ProjectWrapper>This is the Home page</ProjectWrapper>;
 }
