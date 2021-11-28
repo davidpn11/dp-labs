@@ -12,6 +12,7 @@ body, #app {
   margin: 0;
   padding: 0;
   background: ${getThemedValues('background')};
+  /* background: #000 linear-gradient(180deg, #000,#3D6D8B) no-repeat; */
   color: ${getThemedValues('text')};
   width: 100vw;
   height: 100vh;

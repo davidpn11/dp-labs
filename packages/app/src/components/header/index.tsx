@@ -13,6 +13,10 @@ import LogoWhite from '../../assets/logo-white.svg';
 import LogoBlack from '../../assets/logo-black.svg';
 import LogoWhiteActive from '../../assets/logo-white-active.svg';
 import LogoBlackActive from '../../assets/logo-black-active.svg';
+import LogoActiveDark from '../../assets/logo-active-dark.svg';
+import LogoActiveLight from '../../assets/logo-active-light.svg';
+import LogoExtendedDark from '../../assets/logo-extended-dark.svg';
+import LogoExtendedLight from '../../assets/logo-extended-light.svg';
 import {useThemeContext} from '@dplabs/shared';
 
 export function PageHeader() {
@@ -25,9 +29,13 @@ export function PageHeader() {
 
   const getLogo = () => {
     if (mode === 'light') {
-      return isActive('/') ? <LogoBlackActive /> : <LogoBlack />;
+      // return <LogoExtendedLight />;
+      // return isActive('/') ? <LogoExtendedLight /> : <LogoBlack />;
+      return isActive('/') ? <LogoActiveLight /> : <LogoExtendedLight />;
     }
-    return isActive('/') ? <LogoWhiteActive /> : <LogoWhite />;
+    // return <LogoExtendedDark />;
+    return isActive('/') ? <LogoActiveDark /> : <LogoExtendedDark />;
+    // return isActive('/') ? <LogoExtendedDark /> : <LogoWhite />;
   };
 
   return (

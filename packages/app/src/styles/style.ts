@@ -15,8 +15,8 @@ export const HeaderContainer = styled.header`
 
   @media screen and (max-width: 600px) {
     grid-template-areas:
-      'logo logo logo logo'
-      'routes routes routes tools';
+      'logo logo logo tools'
+      'routes routes routes routes';
   }
 `;
 
@@ -24,8 +24,8 @@ export const LogoContainer = styled.div`
   grid-area: logo;
   padding: 16px;
   svg {
-    width: 150px;
-    height: 48px;
+    width: 180px;
+    height: 72px;
   }
 `;
 export const ToolsContainer = styled.div`
@@ -35,7 +35,7 @@ export const ToolsContainer = styled.div`
   display: flex;
   cursor: pointer;
   align-items: center;
-  justify-self: flex-end;
+  justify-self: center;
   display: flex;
   margin-right: 32px;
   justify-content: flex-end;
