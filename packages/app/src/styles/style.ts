@@ -1,4 +1,5 @@
 import {getThemedValues} from '@dplabs/qik-ui';
+import {darken, opacify, transparentize} from 'polished';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
@@ -35,10 +36,15 @@ export const ToolsContainer = styled.div`
   display: flex;
   cursor: pointer;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   display: flex;
-  margin-right: 32px;
-  justify-content: flex-end;
+  margin-right: 16px;
+  border-radius: 8px;
+
+  :hover {
+    background: ${props =>
+      transparentize(0.9, getThemedValues('text')({theme: props.theme}))};
+  }
 
   svg {
     fill: ${getThemedValues('text')};
