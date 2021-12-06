@@ -12,7 +12,7 @@ export type Experiment = {
   thumbnail: string;
   thumbnailAlt: string;
   tags: string[];
-  demo: JSX.Element;
+  demo?: JSX.Element;
 };
 
 export const experimentList: Record<string, Experiment> = {
@@ -26,5 +26,15 @@ export const experimentList: Record<string, Experiment> = {
     tags: ['React', 'Design System'],
     thumbnailAlt: 'Qik up demo image',
     demo: <QikUiDemo />,
+  },
+  'deep-sandbox': {
+    name: ' Deep Sandbox',
+    description: 'Easier way to in-browser IDEs',
+    status: 'STARTED',
+    experimentType: 'PROJECT',
+    thumbnail: '',
+    tags: ['React', 'Experiemnt'],
+    thumbnailAlt: '',
+    // demo: null as JSX.Element,
   },
 };

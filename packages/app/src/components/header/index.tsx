@@ -20,7 +20,7 @@ export function PageHeader() {
   const location = useLocation();
 
   const isActive = (path: string) => {
-    return path === location.pathname;
+    return location.pathname.includes(path);
   };
 
   const getLogo = () => {
