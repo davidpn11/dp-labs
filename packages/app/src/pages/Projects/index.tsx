@@ -1,11 +1,13 @@
 import React from 'react';
 import {ProjectList} from '@dplabs/projects-app';
-import {ProjectWrapper} from '@dplabs/shared';
+import {Body1, Header, ProjectWrapper} from '@dplabs/shared';
 
 export default function Projects() {
   return (
     <ProjectWrapper>
-      <h1>This is the Project page</h1>
+      <Header>
+        Check out some of my personal <strong>Projects</strong>
+      </Header>
       <ProjectList />
     </ProjectWrapper>
   );
