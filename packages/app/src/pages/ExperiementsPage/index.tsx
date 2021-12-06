@@ -1,5 +1,5 @@
 import React from 'react';
-import {ExperimentCard} from '@dplabs/experiments-app';
+import {ExperimentList} from '@dplabs/experiments-app';
 import {ProjectWrapper} from '@dplabs/shared';
 import {Header, Body1} from '@dplabs/shared';
 
@@ -23,7 +23,7 @@ export default function ExperimentsPage() {
         solidify my learning and put it out there for the next person trying it
         out.
       </Body1>
-      <ExperimentCard title={'first post'} />
+      <ExperimentList />
     </ProjectWrapper>
   );
 }

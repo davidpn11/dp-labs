@@ -1,13 +1,29 @@
 import React from 'react';
-import {CardPostWrapper} from './styles';
+import {Link} from 'react-router-dom';
+import {Experiment} from '../../experiments';
+import {CardPostWrapper, Overlay, ExperimentDetails} from './styles';
 type Props = {
-  title: string;
+  id: string;
+  experiment: Experiment;
 };
+import {useNavigate} from 'react-router-dom';
 
-export function ExperimentCard(props: Props) {
+function ExperimentStatus() {}
+
+export function ExperimentCard({experiment, id}: Props) {
+  const navigate = useNavigate();
+
+  const goToExperiment = () => {
+    navigate(`/experiments/${id}`);
+  };
   return (
-    <CardPostWrapper>
-      <h2>{props.title}</h2>
+    <CardPostWrapper onClick={goToExperiment}>
+      <ExperimentDetails>
+        <h2>{experiment.name}</h2>
+        <p>{experiment.description}</p>
+      </ExperimentDetails>
+      <img src={experiment.thumbnail} alt={experiment.thumbnailAlt} />
+      <Overlay>Click to see more</Overlay>
     </CardPostWrapper>
   );
 }

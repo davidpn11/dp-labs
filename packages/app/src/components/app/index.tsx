@@ -5,6 +5,13 @@ import {Routes, Route} from 'react-router-dom';
 import routes from '../../routes';
 import Page404 from '../../pages/404';
 import {ThemeProvider as SharedThemeProvider} from '@dplabs/shared';
+const Home = React.lazy(() => import('../../pages/Home'));
+const Projects = React.lazy(() => import('../../pages/Projects'));
+const ExperimentPage = React.lazy(() => import('../../pages/ExperiementsPage'));
+const ExperimentDetail = React.lazy(
+  () => import('../../pages/ExperimentDetail'),
+);
+const About = React.lazy(() => import('../../pages/About'));
 
 export function App() {
   return (
@@ -13,9 +20,14 @@ export function App() {
       <PageHeader />
       <React.Suspense fallback={<span> loading...</span>}>
         <Routes>
-          {routes.map(({path, Component}) => (
-            <Route key={path} path={path} element={<Component />} />
-          ))}
+          <Route index element={<Home />} />
+          <Route path={'projects'} element={<Projects />}></Route>
+          <Route path={'experiments'} element={<ExperimentPage />}></Route>
+          <Route
+            path={'/experiments/:experimentId'}
+            element={<ExperimentDetail />}
+          />
+          <Route path={'about'} element={<About />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </React.Suspense>

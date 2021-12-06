@@ -161,8 +161,6 @@ export function themeGen({
     },
   };
 
-  console.log(primaries, secondary);
-
   return {
     mode: 'light',
     colors: {

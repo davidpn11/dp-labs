@@ -1,6 +1,13 @@
-import {ProjectWrapper} from '@dplabs/shared';
+import {Header, ProjectWrapper} from '@dplabs/shared';
 import React from 'react';
 
 export default function Home() {
-  return <ProjectWrapper>This is the Home page</ProjectWrapper>;
+  return (
+    <ProjectWrapper>
+      <Header>Welcome to DeeP Labs</Header>
+      <Header>
+        This page is <strong>under construction</strong> {'  '}🏗
+      </Header>
+    </ProjectWrapper>
+  );
 }
