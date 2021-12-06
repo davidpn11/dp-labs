@@ -2,11 +2,13 @@ import React from 'react';
 import QuiUI from './assets/thumbnails/qik-ui.png';
 import {Demo as QikUiDemo} from '@dplabs/qik-ui/src/demo';
 
+export type ExperimentStatus = 'STARTED' | 'ONGOING' | 'COMPLETED';
+export type ExperimentType = 'PERSONAL_POST' | 'LIVE_LEARNING' | 'PROJECT';
 export type Experiment = {
   name: string;
   description: string;
-  status: 'STARTED' | 'ONGOING' | 'COMPLETED';
-  experimentType: 'PERSONAL_POST' | 'LIVE_LEARNING' | 'PROJECT';
+  status: ExperimentStatus;
+  experimentType: ExperimentType;
   thumbnail: string;
   thumbnailAlt: string;
   tags: string[];
@@ -21,7 +23,7 @@ export const experimentList: Record<string, Experiment> = {
     status: 'ONGOING',
     experimentType: 'PROJECT',
     thumbnail: QuiUI,
-    tags: [],
+    tags: ['React', 'Design System'],
     thumbnailAlt: 'Qik up demo image',
     demo: <QikUiDemo />,
   },

@@ -4,7 +4,7 @@ import {getThemedValues} from '@dplabs/qik-ui';
 export const Overlay = styled.div<{expand: boolean}>`
   position: absolute;
   width: 400px;
-  height: 220px;
+  height: 256px;
   background: ${props => props.theme.colors.neutral[600]};
   opacity: 0;
   color: ${props => props.theme.colors.neutral[100]};
@@ -23,7 +23,7 @@ export const Overlay = styled.div<{expand: boolean}>`
 
 export const ProjectCardWrapper = styled.div<{expand: boolean}>`
   width: 400px;
-  height: 220px;
+  height: 256px;
   ${props =>
     props.expand &&
     css`

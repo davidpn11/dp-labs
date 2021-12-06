@@ -18,11 +18,6 @@ export default function ExperimentsPage() {
         page is an atempt to not only keep a better track, but also to solidify
         my learning and put it out there for the next person trying it out.
       </Body1>
-      <Body1>
-        This page is an atempt to not only keep a better track, but also to
-        solidify my learning and put it out there for the next person trying it
-        out.
-      </Body1>
       <ExperimentList />
     </ProjectWrapper>
   );
