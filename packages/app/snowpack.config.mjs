@@ -3,7 +3,7 @@ export default {
     public: '/',
     src: '/dist',
     '../shared': '/@dplabs/shared',
-    '../blog-app': '/@dplabs/blog-app',
+    '../experiments-app': '/@dplabs/experiments-app',
     '../projects-app': '/@dplabs/projects-app',
     '../qik-ui': '/@dplabs/qik-ui',
   },
@@ -21,7 +21,7 @@ export default {
   ],
   alias: {
     '@dplabs/shared': '../shared',
-    '@dplabs/blog-app': '../blog-app',
+    '@dplabs/experiments-app': '../experiments-app',
     '@dplabs/projects-app': '../projects-app',
     '@dplabs/qik-ui': '../qik-ui',
   },

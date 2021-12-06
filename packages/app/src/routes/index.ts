@@ -2,8 +2,7 @@ import React from 'react';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Projects = React.lazy(() => import('../pages/Projects'));
-const Blog = React.lazy(() => import('../pages/Blog'));
-const Library = React.lazy(() => import('../pages/Library'));
+const ExperimentPage = React.lazy(() => import('../pages/ExperiementsPage'));
 const About = React.lazy(() => import('../pages/About'));
 
 type Route = {
@@ -15,8 +14,7 @@ type Route = {
 const routes: Route[] = [
   {path: '/', Component: Home, isDisabled: false},
   {path: '/projects', Component: Projects, isDisabled: false},
-  {path: '/blog', Component: Blog, isDisabled: false},
-  {path: '/library', Component: Library, isDisabled: true},
+  {path: '/experiments', Component: ExperimentPage, isDisabled: false},
   {path: '/about', Component: About, isDisabled: false},
 ];
 

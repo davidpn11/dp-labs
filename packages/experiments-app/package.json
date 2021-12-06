@@ -1,5 +1,5 @@
 {
-  "name": "@dplabs/blog-app",
+  "name": "@dplabs/experiments-app",
   "version": "1.0.0",
   "main": "build/index.js",
   "license": "MIT",

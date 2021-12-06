@@ -33,6 +33,10 @@ export const ColorSummaryWrapper = styled.div`
 `;
 export const ThemeGenFormWrapper = styled.div`
   grid-area: form;
+
+  button {
+    margin-top: 10px;
+  }
 `;
 
 export const ComponentsWrapper = styled.div`

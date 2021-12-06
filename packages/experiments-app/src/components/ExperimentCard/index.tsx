@@ -4,7 +4,7 @@ type Props = {
   title: string;
 };
 
-export function PostCard(props: Props) {
+export function ExperimentCard(props: Props) {
   return (
     <CardPostWrapper>
       <h2>{props.title}</h2>

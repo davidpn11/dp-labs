@@ -36,9 +36,9 @@ export function PageHeader() {
         <LogoContainer>{getLogo()}</LogoContainer>
       </Link>
       <PagesContainer>
-        <Link to="blog">
-          <GhostButton active={isActive('/blog')} variant="default">
-            Blog
+        <Link to="/experiments">
+          <GhostButton active={isActive('/experiments')} variant="default">
+            Experiments
           </GhostButton>
         </Link>
         <Link to="/projects">
@@ -46,11 +46,6 @@ export function PageHeader() {
             Projects
           </GhostButton>
         </Link>
-        {/* <Link to="/library">
-          <GhostButton active={isActive('/library')} variant="default">
-            Library
-          </GhostButton>
-        </Link> */}
         <Link to="/about">
           <GhostButton active={isActive('/about')} variant="default">
             About
